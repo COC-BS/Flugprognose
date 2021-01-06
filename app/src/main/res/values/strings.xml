@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Flugprognose</string>
+
+
+    <!-->Internetadressen<-->
+    <string name="urlFöhndiagramm">http://www.meteocentrale.ch/uploads/pics/uwz-ch_foehn_de.png</string>
+
+</resources>
