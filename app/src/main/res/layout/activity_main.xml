@@ -18,12 +18,72 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textFöhndiagramm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Föhndiagramm"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/imgViewFöhn"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/loading_img"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textAllgLage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Allgemeine Lage"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textAllgLageMeteoSchw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="Text Allgemeine Lage Meteo Schweiz"
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textAllgLageDatum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="5dp"
+                android:text="Datum"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewAllgLage"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                app:srcCompat="@drawable/loading_img"
+                tools:visibility="visible" />
+
+            <TextView
                 android:id="@+id/textZuverlässigkeit"
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
                 android:text="Zuverlässigkeit Prognosen"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
             <com.ortiz.touchview.TouchImageView
                 android:id="@+id/imgViewVerlässlichkeit"
@@ -47,46 +107,6 @@
                 app:tickColorInactive="#686864"
                 app:trackColorActive="#A35757"
                 app:trackColorInactive="#554F4F" />
-
-            <TextView
-                android:id="@+id/textFöhndiagramm"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="Föhndiagramm"
-                android:textAlignment="center" />
-
-            <ImageView
-                android:id="@+id/imgViewFöhn"
-                android:layout_width="fill_parent"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/loading_img"
-                tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/textAllgLage"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Allgemeine Lage"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/textAllgLageDatum"
-                android:layout_width="fill_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:text="Datum"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <com.ortiz.touchview.TouchImageView
-                android:id="@+id/imgViewAllgLage"
-                android:layout_width="fill_parent"
-                android:layout_height="250dp"
-                app:srcCompat="@drawable/loading_img"
-                tools:visibility="visible" />
-
 
         </LinearLayout>
     </ScrollView>
