@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.flycoc.flugprognose.utils.LoadImageHelper;
