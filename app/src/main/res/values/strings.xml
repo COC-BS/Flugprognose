@@ -4,5 +4,7 @@
 
     <!-->Internetadressen<-->
     <string name="urlFöhndiagramm">http://www.meteocentrale.ch/uploads/pics/uwz-ch_foehn_de.png</string>
+    <string name="urlVerlässlichkeit">https://www.wetterzentrale.de/maps/GFSSPAGEU18_24_1.png</string>
+
 
 </resources>

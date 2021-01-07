@@ -14,6 +14,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+//Helferklasse um Bilder aus dem Internet zu laden
 public class LoadImageHelper {
 
     public void loadImage (Activity activity, String url, ImageView imgView) {

@@ -6,22 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imgViewFöhn"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="124dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="Föhndiagramm"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textZuverlässigkeit"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Zuverlässigkeit Prognosen"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/imgViewVerlässlichkeit"
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/loading_img"
+                tools:visibility="visible" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderVerlässlichkeit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:stepSize="12.0"
+                android:value="24"
+                android:valueFrom="0"
+                android:valueTo="72"
+                app:haloColor="#4CAF50"
+                app:thumbColor="#774D0F"
+                app:thumbRadius="10dp"
+                app:tickColorInactive="#686864"
+                app:trackColorActive="#A35757"
+                app:trackColorInactive="#554F4F" />
+
+            <TextView
+                android:id="@+id/textFöhndiagramm"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Föhndiagramm"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/imgViewFöhn"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/loading_img"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
