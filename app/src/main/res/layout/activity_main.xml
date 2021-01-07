@@ -63,6 +63,31 @@
                 app:srcCompat="@drawable/loading_img"
                 tools:visibility="visible" />
 
+            <TextView
+                android:id="@+id/textAllgLage"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="Allgemeine Lage"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textAllgLageDatum"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="Datum"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewAllgLage"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                app:srcCompat="@drawable/loading_img"
+                tools:visibility="visible" />
+
+
         </LinearLayout>
     </ScrollView>
 
