@@ -55,18 +55,6 @@
                 android:textAlignment="textStart"
                 android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/textAllgLageDatum"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingHorizontal="20dp"
-                android:paddingTop="5dp"
-                android:text="Datum"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
             <com.ortiz.touchview.TouchImageView
                 android:id="@+id/imgViewAllgLage"
                 android:layout_width="fill_parent"
@@ -107,6 +95,29 @@
                 app:tickColorInactive="#686864"
                 app:trackColorActive="#A35757"
                 app:trackColorInactive="#554F4F" />
+
+            <TextView
+                android:id="@+id/textWetterbericht"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#001C32"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="Wetterbericht"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textWeterberichtMeteoSchw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#001C32"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="Text Wetterbericht Meteo Schweiz"
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </ScrollView>

@@ -21,14 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     LoadContentHelper contentHelper = new LoadContentHelper();
 
-    TouchImageView imgViewVerlässlichkeit;
     ImageView imgViewFöhn;
 
     TextView textAllgLageMeteoSchw;
-    TextView textAllgLageDatum;
     TouchImageView imgViewAllgLage;
 
+    TouchImageView imgViewVerlässlichkeit;
     Slider sliderVerlässlichkeit;
+
+    TextView textWeterberichtMeteoSchw;
 
 
     @Override
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Allgemeine Lage
         loadAllgemeineLage();
+
+        //Wetterbericht Textform
+        textWeterberichtMeteoSchw = findViewById(R.id.textWeterberichtMeteoSchw);
+        contentHelper.loadHTMLformatedTextByJSoup(this, textWeterberichtMeteoSchw, "https://www.meteoschweiz.admin.ch/home.html?tab=report", "textFCK", "<h3>Heute,");
     }
 
     private void loadVerlässlichkeit () {
@@ -73,17 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Text Allgemeine Lage Meteo Schweiz
         textAllgLageMeteoSchw = findViewById(R.id.textAllgLageMeteoSchw);
-        contentHelper.loadTextByJSoup(this, textAllgLageMeteoSchw, getString(R.string.urlAllgLageMeteoSchw),"textFCK");
+        contentHelper.loadHTMLformatedTextByJSoup(this, textAllgLageMeteoSchw, getString(R.string.urlAllgLageMeteoSchw),"textFCK");
 
-
-        textAllgLageDatum = findViewById(R.id.textAllgLageDatum);
         String dateText = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        textAllgLageDatum.setText("Isobaren: "+dateText);
+
         imgViewAllgLage = findViewById(R.id.imgViewAllgLage);
+
         String date = new SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(new Date());
         String urlAllgLage = "https://media.meteonews.net/isobaren/EURNAt_700x450_c1/isobaren_"+date+"_1200.png";
 
         contentHelper.loadImageByURL(this, urlAllgLage, imgViewAllgLage);
+
 
         //contentHelper.loadImageByJSoup(this,imgViewAllgLage,getString(R.string.urlAllgLageMeteoSchw), "blowup");
     }
