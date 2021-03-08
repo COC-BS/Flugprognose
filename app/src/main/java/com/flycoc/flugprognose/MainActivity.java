@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textWeterberichtMeteoSchw;
 
+    ImageView imgViewSHV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         //Wetterbericht Textform
         textWeterberichtMeteoSchw = findViewById(R.id.textWeterberichtMeteoSchw);
         contentHelper.loadHTMLformatedTextByJSoup(this, textWeterberichtMeteoSchw, "https://www.meteoschweiz.admin.ch/home.html?tab=report", "textFCK", "<h3>Heute,");
+
+        //SHV Daten, Höhenwind
+        imgViewSHV = findViewById(R.id.imgViewSHV);
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv2000_033.png", imgViewSHV);
     }
 
     private void loadVerlässlichkeit () {

@@ -24,6 +24,7 @@ import okhttp3.Response;
 //Helferklasse um Bilder aus dem Internet zu laden
 public class LoadContentHelper {
 
+    //Bild mit URL laden
     public void loadImageByURL(Activity activity, String url, ImageView imgView) {
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         Request request = new Request.Builder().url(url).method("GET", null).build();
@@ -54,6 +55,44 @@ public class LoadContentHelper {
         });
     }
 
+    //SHV Daten laden mit Cookie
+    public void loadImageByURLwithCookie(Activity activity, String url, ImageView imgView) {
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        Request request = new Request.Builder().url(url).method("GET", null).build();
+
+        Request authorized = request.newBuilder()
+                .addHeader("Cookie", "PHPSESSID=2hmi7pckmorq0eb48t6acbh113")
+                .build();
+
+        client.newCall(authorized).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    throw new IOException("Unexpected code " + response);
+                } else {
+                    Bitmap bitmap;
+                    InputStream inputStream = response.body().byteStream();
+                    bitmap = BitmapFactory.decodeStream(inputStream);
+
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imgView.setImageBitmap(bitmap);
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    /*
+    Load plain Text from URL and Webclass
+     */
     public void loadTextByJSoup(Activity activity, TextView textView, String url, String webClassName) {
         new Thread(new Runnable() {
             @Override
@@ -81,7 +120,7 @@ public class LoadContentHelper {
     }
 
     /*
-    Load text in HTML-Format an concat
+    Load text in HTML-Format and concat
      */
     public void loadHTMLformatedTextByJSoup(Activity activity, TextView textView, String url, String webClassName, String concatText) {
         new Thread(new Runnable() {
@@ -114,7 +153,7 @@ public class LoadContentHelper {
     }
 
     /*
-    Load text in HTML-Format an concat
+    Load text in HTML-Format
     */
     public void loadHTMLformatedTextByJSoup(Activity activity, TextView textView, String url, String webClassName) {
         new Thread(new Runnable() {
@@ -143,6 +182,7 @@ public class LoadContentHelper {
     }
 
 
+    //Versuch Bild mit JSoup zu laden, funktioniert noch nicht!
     public void loadImageByJSoup(Activity activity, ImageView imageView, String url, String webClassName) {
         new Thread(new Runnable() {
             @Override

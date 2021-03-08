@@ -119,6 +119,12 @@
                 android:textAlignment="textStart"
                 android:textSize="14sp" />
 
+            <ImageView
+                android:id="@+id/imgViewSHV"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/loading_img" />
+
         </LinearLayout>
     </ScrollView>
 
