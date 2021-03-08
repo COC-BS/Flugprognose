@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textWeterberichtMeteoSchw;
 
-    ImageView imgViewSHV;
+    ImageView imgViewSHV10m;
+    ImageView imgViewSHV1500m;
+    ImageView imgViewSHV2000m;
+    ImageView imgViewSHV3000m;
+    ImageView imgViewSHV4000m;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +57,17 @@ public class MainActivity extends AppCompatActivity {
         contentHelper.loadHTMLformatedTextByJSoup(this, textWeterberichtMeteoSchw, "https://www.meteoschweiz.admin.ch/home.html?tab=report", "textFCK", "<h3>Heute,");
 
         //SHV Daten, Höhenwind
-        imgViewSHV = findViewById(R.id.imgViewSHV);
-        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv2000_033.png", imgViewSHV);
+        imgViewSHV10m = findViewById(R.id.imgViewSHV10m);
+        imgViewSHV1500m = findViewById(R.id.imgViewSHV1500m);
+        imgViewSHV2000m = findViewById(R.id.imgViewSHV2000m);
+        imgViewSHV3000m = findViewById(R.id.imgViewSHV3000m);
+        imgViewSHV4000m = findViewById(R.id.imgViewSHV4000m);
+        String cookieSHV = "PHPSESSID=2hmi7pckmorq0eb48t6acbh113";
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv10m_024.png", imgViewSHV10m, cookieSHV);
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv850_024.png", imgViewSHV1500m, cookieSHV);
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv2000_024.png", imgViewSHV2000m, cookieSHV);
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv3000_024.png", imgViewSHV3000m, cookieSHV);
+        contentHelper.loadImageByURLwithCookie(this, "https://www.meteo-shv.ch/inbox/data/c2e_ch_ctrl_uv4000_024.png", imgViewSHV4000m, cookieSHV);
     }
 
     private void loadVerlässlichkeit () {

@@ -56,12 +56,12 @@ public class LoadContentHelper {
     }
 
     //SHV Daten laden mit Cookie
-    public void loadImageByURLwithCookie(Activity activity, String url, ImageView imgView) {
+    public void loadImageByURLwithCookie(Activity activity, String url, ImageView imgView, String cookieValueAndID) {
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         Request request = new Request.Builder().url(url).method("GET", null).build();
 
         Request authorized = request.newBuilder()
-                .addHeader("Cookie", "PHPSESSID=2hmi7pckmorq0eb48t6acbh113")
+                .addHeader("Cookie", cookieValueAndID)
                 .build();
 
         client.newCall(authorized).enqueue(new Callback() {

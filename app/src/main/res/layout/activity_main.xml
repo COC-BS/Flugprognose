@@ -119,10 +119,34 @@
                 android:textAlignment="textStart"
                 android:textSize="14sp" />
 
-            <ImageView
-                android:id="@+id/imgViewSHV"
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewSHV10m"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/loading_img" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewSHV1500m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/loading_img" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewSHV2000m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/loading_img" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewSHV3000m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/loading_img" />
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/imgViewSHV4000m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/loading_img" />
 
         </LinearLayout>
